@@ -1,0 +1,43 @@
+﻿
+
+STEP 1.
+To regen EF model run the following in the 'Package Manager Console' with the default project "EF" selected.
+
+
+Scaffold-DbContext "Server=10.249.169.153;Database=OnBoardingSystem_Dev;User Id=OnBoardingSystem_Dev;Password=Onboarding@1234;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context "OBSDBContext" -f -NoPluralize
+STEP 2.
+Inside the <Project>Context.cs file, you will have to replace 1 method with the following
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    if (!optionsBuilder.IsConfigured)
+    {
+        throw new NotImplementedException("Hard coded connection strings are not allowed, use appsettings.json to configure database connection.");
+    }            
+}
+
+STEP3:
+Add/Update Constructor with below code.
+private readonly IAuditInfoMapper auditInfoMapper;
+
+        public OBSDBContext(DbContextOptions<OBSDBContext> options, IAuditInfoMapper auditInfoMapper)
+            : base(options)
+        {
+            this.auditInfoMapper = auditInfoMapper;
+        }
+Step 4: Add below method in bottom of the file
+ public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        {
+            //auditInfoMapper.MapAuditColumns(ChangeTracker.Entries());
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
+
+        public override int SaveChanges()
+        {
+            //auditInfoMapper.MapAuditColumns(ChangeTracker.Entries());
+            return base.SaveChanges();
+        }
+Step 5: Extend all the EFModels with IAuditable inerface if audit information is applicable for that. E.g
+public partial class EntityContractExclusionRule : IAuditableEntity
+    {
+

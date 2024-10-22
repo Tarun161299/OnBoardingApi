@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>OnBoardingSystem.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7265dd19-cb7b-4b11-9944-0099f7af1b61}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>OnBoardingSystem.Database</RootNamespace>
+    <AssemblyName>OnBoardingSystem.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\RequestListInfo.sql" />
+    <Build Include="dbo\Tables\MD_Organization.sql" />
+    <Build Include="dbo\Tables\MD_Ministry.sql" />
+    <Build Include="dbo\Tables\MD_DocumentType.sql" />
+    <Build Include="dbo\Tables\Categories.sql" />
+    <Build Include="dbo\Tables\App_OnboardingResponseLink.sql" />
+    <Build Include="dbo\Tables\App_OnboardingResponse.sql" />
+    <Build Include="dbo\Tables\App_OnboardingRequest.sql" />
+    <Build Include="dbo\Tables\App_OnboardingDetailsResponseLink.sql" />
+    <Build Include="dbo\Tables\App_OnboardingDetailsResponse.sql" />
+    <Build Include="dbo\Tables\App_OnboardingDetails.sql" />
+    <Build Include="dbo\Tables\App_DocumentUploadedDetail.sql" />
+    <Build Include="Security\OnBoardingSystem.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_getrequestdetails.sql" />
+    <Build Include="Security\vascan_1.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_getrequestdetailsStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_getrequestdetails_OLD.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_ExecuteSystemUpdateQuery_Vimal.sql" />
+    <Build Include="dbo\Stored Procedures\SP_MultipleValueReturn.sql" />
+    <Build Include="dbo\Stored Procedures\SP_MDMinistryList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_InsertMinistry.sql" />
+    <Build Include="dbo\Tables\Registration.sql" />
+    <Build Include="dbo\Tables\MD_State.sql" />
+    <Build Include="dbo\Tables\MD_SmsEmailTemplate.sql" />
+    <Build Include="dbo\Tables\MD_Role.sql" />
+    <Build Include="dbo\Tables\MD_District.sql" />
+    <Build Include="dbo\Tables\MD_AgencyType.sql" />
+    <Build Include="dbo\Tables\App_LoginDetails.sql" />
+    <Build Include="dbo\Tables\App_ContactPersonDetails.sql" />
+    <Build Include="Security\vascan_2.sql" />
+    <Build Include="Security\OnBoardingSystem_1.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveOnboardingDetail.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_OnboardingDetailsUpdateStatus.sql" />
+    <Build Include="dbo\Stored Procedures\USP_OnboardingAdminLogin.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertSignUpDetail.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertOnboardingRequest.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertAppOnboardingResponse.sql" />
+    <Build Include="Security\vascan_3.sql" />
+    <Build Include="dbo\Tables\Zmst_ServiceType.sql" />
+    <Build Include="dbo\Tables\Zmst_Projects.sql" />
+    <Build Include="dbo\Tables\Zmst_AgencyExamCouns.sql" />
+    <Build Include="dbo\Tables\Md_ProjectFinancialComponents.sql" />
+    <Build Include="dbo\Tables\MD_Module.sql" />
+    <Build Include="dbo\Tables\MD_EmailRecipient.sql" />
+    <Build Include="dbo\Tables\Md_Agency.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Tables\App_RoleModulePermission.sql" />
+    <Build Include="dbo\Tables\App_ProjectCost.sql" />
+    <Build Include="Security\OnBoardingSystem_2.sql" />
+    <Build Include="dbo\Functions\SplitString.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveDocumentUploadDetails.sql" />
+    <Build Include="dbo\Stored Procedures\USP_OnboardingUserProfile.sql" />
+    <Build Include="dbo\Stored Procedures\USP_OnBoardingRequestLinkCheck.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertProjectDetail.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertAppOnboardingResponse_OLD.sql" />
+    <Build Include="dbo\Stored Procedures\USP_InsertAppOnboardingResponse_Bfr_InsertLink.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GetStatusById.sql" />
+    <Build Include="dbo\Stored Procedures\USP_CheckUserIdAvailibilty.sql" />
+    <Build Include="dbo\Stored Procedures\Proc_GetStatusByRequstId.sql" />
+    <Build Include="dbo\Tables\App_UserRoleMapping.sql" />
+    <Build Include="dbo\Tables\App_ProjectDetails.sql" />
+    <Build Include="dbo\Tables\Zmst_Willingness.sql" />
+    <Build Include="dbo\Tables\Zmst_TypeofDisability.sql" />
+    <Build Include="dbo\Tables\Zmst_Trade.sql" />
+    <Build Include="dbo\Tables\Zmst_Symbol.sql" />
+    <Build Include="dbo\Tables\Zmst_Subject.sql" />
+    <Build Include="dbo\Tables\Zmst_SubCategoryPriority.sql" />
+    <Build Include="dbo\Tables\ZMst_SubCategory.sql" />
+    <Build Include="dbo\Tables\Zmst_Stream.sql" />
+    <Build Include="dbo\Tables\ZMst_State.sql" />
+    <Build Include="dbo\Tables\Zmst_SpecialExamPaper.sql" />
+    <Build Include="dbo\Tables\Zmst_SeatGender.sql" />
+    <Build Include="dbo\Tables\Zmst_SeatCategory.sql" />
+    <Build Include="dbo\Tables\ZMst_ResidentialEligibility.sql" />
+    <Build Include="dbo\Tables\Zmst_Religion.sql" />
+    <Build Include="dbo\Tables\Zmst_RankType.sql" />
+    <Build Include="dbo\Tables\Zmst_Quota.sql" />
+    <Build Include="dbo\Tables\ZMst_QuestionPaperMedium.sql" />
+    <Build Include="dbo\Tables\ZMst_QuesPaper.sql" />
+    <Build Include="dbo\Tables\Zmst_QualifyingExamStream.sql" />
+    <Build Include="dbo\Tables\Zmst_QualifyingExamResultMode.sql" />
+    <Build Include="dbo\Tables\Zmst_QualifyingExamLearningMode.sql" />
+    <Build Include="dbo\Tables\Zmst_QualifyingExamFrom.sql" />
+    <Build Include="dbo\Tables\Zmst_QualifyingExamBoard.sql" />
+    <Build Include="dbo\Tables\ZMst_QualifyingExam.sql" />
+    <Build Include="dbo\Tables\ZMst_QualifyingCourse.sql" />
+    <Build Include="dbo\Tables\Zmst_Qualification.sql" />
+    <Build Include="dbo\Tables\ZMST_Program.sql" />
+    <Build Include="dbo\Tables\Zmst_PassingStatus.sql" />
+    <Build Include="dbo\Tables\Zmst_Nationality.sql" />
+    <Build Include="dbo\Tables\Zmst_MinimumQualification.sql" />
+    <Build Include="dbo\Tables\Zmst_InstituteType.sql" />
+    <Build Include="dbo\Tables\Zmst_InstituteStream.sql" />
+    <Build Include="dbo\Tables\Zmst_InstituteAgency.sql" />
+    <Build Include="dbo\Tables\Zmst_Institute.sql" />
+    <Build Include="dbo\Tables\Zmst_IdentityType.sql" />
+    <Build Include="dbo\Tables\Zmst_Gender.sql" />
+    <Build Include="dbo\Tables\Zmst_FeeType.sql" />
+    <Build Include="dbo\Tables\Zmst_ExamType.sql" />
+    <Build Include="dbo\Tables\Zmst_DocumentType.sql" />
+    <Build Include="dbo\Tables\Zmst_District.sql" />
+    <Build Include="dbo\Tables\Zmst_CourseAppliedLevel.sql" />
+    <Build Include="dbo\Tables\ZMst_CourseApplied.sql" />
+    <Build Include="dbo\Tables\Zmst_Country.sql" />
+    <Build Include="dbo\Tables\ZMst_Category.sql" />
+    <Build Include="dbo\Tables\Zmst_Branch.sql" />
+    <Build Include="dbo\Tables\ZMST_ApplicationSummaryBKP.sql" />
+    <Build Include="dbo\Tables\ZMST_ApplicationSummary.sql" />
+    <Build Include="dbo\Tables\ZMst_ApplicantType.sql" />
+    <Build Include="dbo\Tables\Zmst_AgencyVirtualDirectoryMapping.sql" />
+    <Build Include="dbo\Tables\ZMST_Agency.sql" />
+    <Build Include="dbo\Tables\ZMst_Activity.sql" />
+    <Build Include="dbo\Tables\WorkOrderDetails.sql" />
+    <Build Include="dbo\Tables\ValidationTest.sql" />
+    <Build Include="dbo\Tables\User_Authorization.sql" />
+    <Build Include="dbo\Tables\qualificationDetails.sql" />
+    <Build Include="dbo\Tables\MD_WorkOrderAgency.sql" />
+    <Build Include="dbo\Tables\MD_OnboardingActivity.sql" />
+    <Build Include="dbo\Tables\MD_Module_24082023.sql" />
+    <Build Include="dbo\Tables\MD_IdType.sql" />
+    <Build Include="dbo\Tables\MD_Exam.sql" />
+    <Build Include="dbo\Tables\MD_EmpStatus.sql" />
+    <Build Include="dbo\Tables\employeeWorkOrder.sql" />
+    <Build Include="dbo\Tables\EmployeeDetails.sql" />
+    <Build Include="dbo\Tables\bkp_Del.sql" />
+    <Build Include="dbo\Tables\ApplicationSchedule.sql" />
+    <Build Include="dbo\Tables\ApplicationDayWise.sql" />
+    <Build Include="dbo\Tables\App_DocumentTypeRoleMapping.sql" />
+    <Build Include="Security\OnBoardingSystem_3.sql" />
+    <Build Include="dbo\Functions\fn_getAngGroupVal.sql" />
+    <Build Include="dbo\Functions\fn_EmpCode.sql" />
+    <Build Include="dbo\Functions\fn_capitalize.sql" />
+    <Build Include="dbo\Functions\fnSplit.sql" />
+    <Build Include="dbo\Functions\fn_Split.sql" />
+    <Build Include="dbo\Stored Procedures\USP_StatuscCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_SaveWorkOrderDetail.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_onboardtablelistandGeneratecs.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ImportPrograms.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GetScheduleReport.sql" />
+    <Build Include="dbo\Stored Procedures\USP_CodeGenerator.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_BindController.sql" />
+    <Build Include="dbo\Stored Procedures\RefreshToken.sql" />
+    <Build Include="dbo\Stored Procedures\GetRefreshToken.sql" />
+    <Build Include="dbo\Tables\Zmst_SeatType.sql" />
+    <Build Include="dbo\Tables\Zmst_SeatSubCategory.sql" />
+    <Build Include="dbo\Tables\Zmst_SeatGroup.sql" />
+    <Build Include="dbo\Tables\CGConfigurationControleTest.sql" />
+    <Build Include="dbo\Tables\App_Captcha.sql" />
+    <Build Include="dbo\Tables\ApiSubscriptionKey.sql" />
+    <Build Include="dbo\Tables\__CGConfigration.sql" />
+    <Build Include="Security\OnBoardingSystem_4.sql" />
+    <Build Include="dbo\Stored Procedures\usp_ValidateApiKey.sql" />
+    <Build Include="dbo\Stored Procedures\Usp_Insertcaptcha.sql" />
+    <Build Include="dbo\Stored Procedures\Check_Captcha.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlSchemaCompare1.scmp" />
+  </ItemGroup>
+</Project>
